@@ -26,7 +26,6 @@
 .txt {
     -fx-border-style: none;
     -fx-background-color: transparent;
-    -fx-border: none;
     -fx-text-fill: #000000;
     -fx-font-size: 16px;
 }
