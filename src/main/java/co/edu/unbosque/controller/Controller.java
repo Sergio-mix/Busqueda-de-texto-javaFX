@@ -32,7 +32,6 @@ public class Controller implements Initializable {
         try {
             cbAlgoritmo.getItems().add(0, "KMP");
             cbAlgoritmo.getItems().add(1, "BM");
-            cbAlgoritmo.getItems().add(2, "Boyer Moore");
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
@@ -68,9 +67,6 @@ public class Controller implements Initializable {
                             case 1:
                                 Algoritmos_De_Busqueda.bM(busqueda, texto);
                                 break;
-                            case 2:
-                                Algoritmos_De_Busqueda.boyer_Moore(busqueda, texto);
-                                break;
                         }
                     } else {
                         mostrarAlertWarning("Verifique que halla seleccionado el método de búsqueda");
@@ -84,7 +80,6 @@ public class Controller implements Initializable {
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
-
     }
 
     /**

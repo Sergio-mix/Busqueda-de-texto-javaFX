@@ -14,7 +14,4 @@ public class Algoritmos_De_Busqueda {
         return null;
     }
 
-    public static String boyer_Moore(String text, String buscar) {
-        return null;
-    }
 }
