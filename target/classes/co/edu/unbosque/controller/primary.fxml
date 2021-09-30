@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXTextArea?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -32,7 +32,7 @@
                         <DropShadow height="8.47" radius="4.1175" width="10.0" />
                      </effect>
                   </Button>
-                  <Separator orientation="VERTICAL" prefHeight="52.0" prefWidth="0.0">
+                  <Separator orientation="VERTICAL" prefHeight="60.0" prefWidth="0.0">
                      <HBox.margin>
                         <Insets bottom="20.0" top="20.0" />
                      </HBox.margin>
@@ -67,14 +67,14 @@
             </HBox>
          </top>
          <center>
-            <TextArea fx:id="txtTexto" editable="false" prefHeight="453.0" prefWidth="1200.0" styleClass="txt" BorderPane.alignment="CENTER">
-               <BorderPane.margin>
-                  <Insets top="5.0" />
-               </BorderPane.margin>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-            </TextArea>
+            <JFXTextArea fx:id="txtTexto" editable="false" focusColor="WHITE" unFocusColor="#fc4f4f" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+               <padding>
+                  <Insets left="100.0" right="100.0" top="50.0" />
+               </padding>
+            </JFXTextArea>
          </center>
       </BorderPane>
    </children>
