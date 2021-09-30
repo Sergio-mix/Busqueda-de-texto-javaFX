@@ -43,9 +43,10 @@ public class Controller implements Initializable {
         try {
             texto = OperacionArchivo.cargarArchivo();
 
-            if (texto != null)
+            if (texto != null) {
                 txtTexto.setText(texto);
                 mostrarAlertInfo("Archivo cargado");
+            }
 
         } catch (Exception e) {
             mostrarAlertError("Error al cargar el archivo inténtelo de nuevo");
