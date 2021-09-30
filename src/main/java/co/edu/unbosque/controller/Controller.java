@@ -10,8 +10,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import com.jfoenix.controls.JFXTextArea;
 
 
 public class Controller implements Initializable {
@@ -23,7 +23,7 @@ public class Controller implements Initializable {
     private ComboBox<String> cbAlgoritmo;
 
     @FXML
-    private TextArea txtTexto;
+    private JFXTextArea txtTexto;
 
     private static String texto = null;
 
@@ -45,6 +45,7 @@ public class Controller implements Initializable {
             if (texto != null) {
                 txtTexto.setText(texto);
                 mostrarAlertInfo("Archivo cargado");
+                marcar();
             }
 
         } catch (Exception e) {
@@ -82,13 +83,20 @@ public class Controller implements Initializable {
         }
     }
 
+
+    @FXML
+    private void marcar() {
+
+    }
+
+
     /**
      * Alert de error
      *
      * @param text texto del alert
      */
     @FXML
-    public void mostrarAlertError(String text) {
+    private void mostrarAlertError(String text) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setHeaderText(null);
         alert.setTitle("Error");
@@ -102,7 +110,7 @@ public class Controller implements Initializable {
      * @param text texto del alert
      */
     @FXML
-    public void mostrarAlertInfo(String text) {
+    private void mostrarAlertInfo(String text) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setHeaderText(null);
         alert.setTitle("Información");
@@ -116,7 +124,7 @@ public class Controller implements Initializable {
      * @param text texto del alert
      */
     @FXML
-    public void mostrarAlertWarning(String text) {
+    private void mostrarAlertWarning(String text) {
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setHeaderText(null);
         alert.setTitle("Advertencia");
