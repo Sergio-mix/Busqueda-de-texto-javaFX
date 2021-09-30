@@ -17,9 +17,6 @@
       <BorderPane layoutX="202.0" layoutY="88.0" prefHeight="200.0" prefWidth="200.0" styleClass="body" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
             <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0" styleClass="pane" BorderPane.alignment="CENTER">
-               <effect>
-                  <DropShadow />
-               </effect>
                <children>
                   <Button mnemonicParsing="false" onAction="#cargarArchivo" prefHeight="42.0" prefWidth="47.0" styleClass="button-archivo" text="Abrir" textAlignment="CENTER" textFill="WHITE">
                      <font>
@@ -64,16 +61,22 @@
                      </HBox.margin>
                   </Separator>
                </children>
+               <effect>
+                  <DropShadow />
+               </effect>
             </HBox>
          </top>
          <center>
-            <JFXTextArea fx:id="txtTexto" editable="false" focusColor="WHITE" unFocusColor="#fc4f4f" BorderPane.alignment="CENTER">
+            <JFXTextArea fx:id="txtTexto" editable="false" focusColor="#262626" onMouseClicked="#au" styleClass="txt" unFocusColor="#fc4f4f" BorderPane.alignment="CENTER">
                <font>
                   <Font name="Arial" size="16.0" />
                </font>
                <padding>
                   <Insets left="100.0" right="100.0" top="50.0" />
                </padding>
+               <BorderPane.margin>
+                  <Insets top="10.0" />
+               </BorderPane.margin>
             </JFXTextArea>
          </center>
       </BorderPane>

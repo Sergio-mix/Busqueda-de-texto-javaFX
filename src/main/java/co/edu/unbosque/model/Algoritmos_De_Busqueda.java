@@ -1,16 +1,18 @@
 package co.edu.unbosque.model;
 
+import java.util.List;
+
 public class Algoritmos_De_Busqueda {
 
     public Algoritmos_De_Busqueda() {
 
     }
 
-    public static String kMP(String text, String buscar) {
+    public static List<Integer[]> kMP(String text, String buscar) {
         return null;
     }
 
-    public static String bM(String text, String buscar) {
+    public static List<Integer[]> bM(String text, String buscar) {
         return null;
     }
 

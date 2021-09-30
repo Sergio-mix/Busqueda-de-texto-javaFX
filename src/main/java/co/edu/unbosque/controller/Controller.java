@@ -2,6 +2,7 @@ package co.edu.unbosque.controller;
 
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import co.edu.unbosque.model.Algoritmos_De_Busqueda;
@@ -37,6 +38,9 @@ public class Controller implements Initializable {
         }
     }
 
+    /**
+     * Método para cargar txt
+     */
     @FXML
     private void cargarArchivo() {
         try {
@@ -45,7 +49,6 @@ public class Controller implements Initializable {
             if (texto != null) {
                 txtTexto.setText(texto);
                 mostrarAlertInfo("Archivo cargado");
-                marcar();
             }
 
         } catch (Exception e) {
@@ -53,20 +56,27 @@ public class Controller implements Initializable {
         }
     }
 
+    /**
+     * Método para buscar
+     */
     @FXML
     private void buscar() {
         try {
             String busqueda = txtBuscar.getText();
 
             if (texto != null) {
+
                 if (!busqueda.equals("")) {
+
                     if (!cbAlgoritmo.getSelectionModel().isEmpty()) {
+
                         switch (cbAlgoritmo.getSelectionModel().getSelectedIndex()) {
+
                             case 0:
-                                Algoritmos_De_Busqueda.kMP(busqueda, texto);
+                                select(Algoritmos_De_Busqueda.kMP(busqueda, texto));
                                 break;
                             case 1:
-                                Algoritmos_De_Busqueda.bM(busqueda, texto);
+                                select(Algoritmos_De_Busqueda.bM(busqueda, texto));
                                 break;
                         }
                     } else {
@@ -83,10 +93,27 @@ public class Controller implements Initializable {
         }
     }
 
+    /**
+     * Método para resaltar por rango
+     *
+     * @param range lista de rangos
+     */
+    @FXML
+    private void select(List<Integer[]> range) {
+        try {
+            txtTexto.setStyle("-fx-highlight-fill: #ffe800;");
+
+            for (Integer[] i : range) {
+                txtTexto.selectRange(i[0], i[1]);
+            }
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
 
     @FXML
-    private void marcar() {
-
+    private void au() {
+        txtTexto.setStyle("-fx-highlight-fill: #878686;");
     }
 
 
