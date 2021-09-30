@@ -1,0 +1,31 @@
+.body {
+    -fx-background-color: #ffffff;
+}
+
+.pane {
+    -fx-background-color: #403d3d;
+}
+
+.button-buscar {
+    -fx-background-color: #636262;
+    -fx-background-radius: 5;
+}
+
+.button-archivo {
+    -fx-background-color: #636262;
+    -fx-background-radius: 5;
+}
+
+.txt-buscar {
+    -fx-background-color: #636262;
+    -fx-border-radius: 10;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 13px;
+}
+
+.txt {
+    -fx-border-style: none;
+    -fx-background-color: transparent;
+    -fx-text-fill: #000000;
+    -fx-font-size: 16px;
+}
