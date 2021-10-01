@@ -25,7 +25,7 @@
                         <Font name="Arial" size="14.0" />
                      </font>
                      <HBox.margin>
-                        <Insets left="20.0" top="40.0" />
+                        <Insets left="20.0" top="45.0" />
                      </HBox.margin>
                      <effect>
                         <DropShadow height="8.47" radius="4.1175" width="10.0" />
@@ -36,19 +36,19 @@
                         <Insets bottom="20.0" top="20.0" />
                      </HBox.margin>
                   </Separator>
-                  <VBox prefHeight="100.0" prefWidth="477.0">
+                  <VBox prefHeight="129.0" prefWidth="393.0">
                      <children>
                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Buscar">
                            <font>
                               <Font name="Arial" size="15.0" />
                            </font>
                            <VBox.margin>
-                              <Insets left="200.0" top="15.0" />
+                              <Insets left="240.0" top="15.0" />
                            </VBox.margin>
                         </Text>
-                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+                        <HBox prefHeight="98.0" prefWidth="395.0" spacing="30.0">
                            <children>
-                              <ComboBox fx:id="cbAlgoritmo" prefHeight="0.0" prefWidth="133.0" promptText="Seleccione..." styleClass="txt-buscar">
+                              <ComboBox fx:id="cbAlgoritmo" prefHeight="0.0" prefWidth="133.0" promptText="Algoritmo..." styleClass="txt-buscar">
                                  <HBox.margin>
                                     <Insets left="30.0" top="25.0" />
                                  </HBox.margin>
@@ -56,7 +56,7 @@
                                     <DropShadow height="9.24" radius="4.3100000000000005" width="10.0" />
                                  </effect>
                               </ComboBox>
-                              <TextField fx:id="txtBuscar" onAction="#buscar" prefHeight="18.0" prefWidth="214.0" promptText="Buscar" styleClass="txt-buscar">
+                              <TextField fx:id="txtBuscar" onAction="#buscar" prefHeight="30.0" prefWidth="190.0" promptText="Buscar" styleClass="txt-buscar">
                                  <HBox.margin>
                                     <Insets top="25.0" />
                                  </HBox.margin>
@@ -67,30 +67,30 @@
                                     <DropShadow height="9.0" radius="4.25" width="10.0" />
                                  </effect>
                               </TextField>
-                              <Text fx:id="txtContador" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0">
-                                 <font>
-                                    <Font name="Arial" size="14.0" />
-                                 </font>
-                                 <HBox.margin>
-                                    <Insets top="30.0" />
-                                 </HBox.margin>
-                                 <effect>
-                                    <DropShadow height="9.24" radius="4.3100000000000005" width="10.0" />
-                                 </effect>
-                              </Text>
                            </children>
                         </HBox>
                      </children>
                   </VBox>
+                  <Text fx:id="txtContador" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="104.00000715255737">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets top="60.0" />
+                     </HBox.margin>
+                     <effect>
+                        <DropShadow height="9.24" radius="4.3100000000000005" width="10.0" />
+                     </effect>
+                  </Text>
                   <Separator disable="true" orientation="VERTICAL" prefHeight="60.0" prefWidth="0.0">
                      <HBox.margin>
                         <Insets bottom="20.0" top="20.0" />
                      </HBox.margin>
                   </Separator>
                </children>
-               <effect>
-                  <DropShadow />
-               </effect>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
             </HBox>
          </top>
          <center>
@@ -99,7 +99,7 @@
                   <Font name="Arial" size="15.0" />
                </font>
                <padding>
-                  <Insets left="50.0" top="50.0" />
+                  <Insets left="50.0" top="30.0" />
                </padding>
                <BorderPane.margin>
                   <Insets top="10.0" />
