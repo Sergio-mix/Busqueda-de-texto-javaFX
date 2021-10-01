@@ -13,7 +13,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="Busqueda-Archivo-java" options="--add-exports javafx.graphics/com.sun.javafx.util=org.example --add-exports javafx.controls/com.sun.javafx.scene.control=org.example" />
+      <module name="Busqueda-Archivo-java" options="--add-exports javafx.graphics/com.sun.javafx.util=org.example --add-exports javafx.controls/com.sun.javafx.scene.control=org.example --add-exports javafx.base/com.sun.javafx.binding=org.example --add-exports javafx.graphics/com.sun.javafx.scene=org.example" />
     </option>
   </component>
 </project>

@@ -13,6 +13,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import com.jfoenix.controls.JFXTextArea;
+import javafx.scene.text.Text;
 
 
 public class Controller implements Initializable {
@@ -21,12 +22,18 @@ public class Controller implements Initializable {
     private TextField txtBuscar;
 
     @FXML
+    private Text txtContador;
+
+    @FXML
     private ComboBox<String> cbAlgoritmo;
 
     @FXML
     private JFXTextArea txtTexto;
 
     private static String texto = null;
+
+    private Thread hilo;
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -51,7 +58,6 @@ public class Controller implements Initializable {
                 txtTexto.setText(texto);
                 mostrarAlertInfo("Archivo cargado");
             }
-
         } catch (Exception e) {
             mostrarAlertError("Error al cargar el archivo inténtelo de nuevo");
         }
@@ -85,8 +91,6 @@ public class Controller implements Initializable {
                     } else {
                         mostrarAlertWarning("Verifique que halla seleccionado el método de búsqueda");
                     }
-                } else {
-                    mostrarAlertWarning("Que desea buscar?");
                 }
             } else {
                 mostrarAlertWarning("Primero seleccione el archivo txt");
@@ -102,13 +106,32 @@ public class Controller implements Initializable {
      * @param range lista de rangos
      */
     @FXML
-    private void select(List<String> range) {
+    private void select(List<List<Integer>> range) {
         try {
-            for (String i : range) {
-                txtTexto.selectRange(Integer.parseInt(i.split(" ")[0]),
-                        Integer.parseInt(i.split(" ")[1]));
-            }
             txtTexto.setStyle("-fx-highlight-fill: #ffe800;");
+            txtContador.setText(range.size() + " Results");
+
+            if (range.size() != 1) {
+                Runnable runnable = new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            for (List<Integer> i : range) {
+                                txtTexto.selectRange(i.get(0), i.get(1));
+                                Thread.sleep(600);
+                            }
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        hilo.stop();
+                    }
+                };
+
+                hilo = new Thread(runnable);
+                hilo.start();
+            } else {
+                txtTexto.selectRange(range.get(0).get(0), range.get(0).get(1));
+            }
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
@@ -116,8 +139,15 @@ public class Controller implements Initializable {
 
 
     @FXML
-    private void au() {
-        txtTexto.setStyle("-fx-highlight-fill: #878686;");
+    private void reset() {
+        try {
+            txtTexto.setStyle("-fx-highlight-fill: #878686;");
+            txtContador.setText("");
+            txtBuscar.setText("");
+            hilo.stop();
+        } catch (Exception ignore) {
+
+        }
     }
 
 
