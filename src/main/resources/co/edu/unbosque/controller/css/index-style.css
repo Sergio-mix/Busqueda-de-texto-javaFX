@@ -3,8 +3,9 @@
 }
 
 .pane {
-    -fx-effect: dropshadow(gaussian, rgba(4, 210, 179, 0.76), 10, 0.5, 0.0, 0.0);
+    -fx-effect: dropshadow(gaussian, rgb(37, 237, 255), 10, 0.5, 0.0, 0.0);
     -fx-background-color: #262626;
+    -fx-border-style: solid;
 }
 
 .button-buscar {

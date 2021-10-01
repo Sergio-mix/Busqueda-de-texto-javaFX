@@ -4,16 +4,20 @@ package co.edu.unbosque.controller;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.function.UnaryOperator;
 
 import co.edu.unbosque.model.Algoritmos_De_Busqueda;
 import co.edu.unbosque.persistence.OperacionArchivo;
+import javafx.collections.ListChangeListener;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import com.jfoenix.controls.JFXTextArea;
+import javafx.scene.control.TextFormatter;
 import javafx.scene.text.Text;
+import javafx.util.StringConverter;
 
 
 public class Controller implements Initializable {
@@ -33,6 +37,8 @@ public class Controller implements Initializable {
     private static String texto = null;
 
     private Thread hilo;
+
+    private static final int TIEMPO = 500;
 
 
     @Override
@@ -109,7 +115,7 @@ public class Controller implements Initializable {
     private void select(List<List<Integer>> range) {
         try {
             txtTexto.setStyle("-fx-highlight-fill: #ffe800;");
-            txtContador.setText(range.size() + " Results");
+            txtContador.setText(range.size() + " Resultados");
 
             if (range.size() != 1) {
                 Runnable runnable = new Runnable() {
@@ -118,7 +124,7 @@ public class Controller implements Initializable {
                         try {
                             for (List<Integer> i : range) {
                                 txtTexto.selectRange(i.get(0), i.get(1));
-                                Thread.sleep(600);
+                                Thread.sleep(TIEMPO);
                             }
                         } catch (InterruptedException e) {
                             e.printStackTrace();
