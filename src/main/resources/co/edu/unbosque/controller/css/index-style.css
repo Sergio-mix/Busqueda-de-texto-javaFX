@@ -1,10 +1,10 @@
 .body {
-    -fx-background-color: #262626;
+    -fx-background-color: #323130;
 }
 
 .pane {
     -fx-effect: dropshadow(gaussian, rgba(4, 210, 179, 0.76), 10, 0.5, 0.0, 0.0);
-    -fx-background-color: #323130;
+    -fx-background-color: #262626;
 }
 
 .button-buscar {
@@ -21,11 +21,16 @@
     -fx-background-color: #636262;
     -fx-border-radius: 10;
     -fx-text-fill: #FFFFFF;
-    -fx-font-size: 13px;
+    -fx-font-size: 14px;
 }
 
 .txt {
-    -fx-background-color: #262626;
+    -fx-background-color: #323130;
     -fx-text-fill: #FFFFFF;
     -fx-highlight-fill: #878686;
+}
+
+.separator *.line {
+    -fx-border-color: #575555;
+    -fx-border-width: 0.3;
 }

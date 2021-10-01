@@ -10,20 +10,22 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" styleClass="body" stylesheets="@css/index-style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.unbosque.controller.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" styleClass="body" stylesheets="@css/index-style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.unbosque.controller.Controller">
    <children>
       <BorderPane layoutX="202.0" layoutY="88.0" prefHeight="200.0" prefWidth="200.0" styleClass="body" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
-            <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0" styleClass="pane" BorderPane.alignment="CENTER">
+            <HBox onMouseClicked="#reset" prefHeight="130.0" prefWidth="200.0" spacing="20.0" styleClass="pane" BorderPane.alignment="CENTER">
                <children>
-                  <Button mnemonicParsing="false" onAction="#cargarArchivo" prefHeight="42.0" prefWidth="47.0" styleClass="button-archivo" text="Abrir" textAlignment="CENTER" textFill="WHITE">
+                  <Button mnemonicParsing="false" onAction="#cargarArchivo" prefHeight="48.0" prefWidth="63.0" styleClass="button-archivo" text="Abrir" textAlignment="CENTER" textFill="WHITE">
                      <font>
-                        <Font name="Arial" size="13.0" />
+                        <Font name="Arial" size="14.0" />
                      </font>
                      <HBox.margin>
-                        <Insets left="20.0" top="27.0" />
+                        <Insets left="20.0" top="40.0" />
                      </HBox.margin>
                      <effect>
                         <DropShadow height="8.47" radius="4.1175" width="10.0" />
@@ -34,20 +36,53 @@
                         <Insets bottom="20.0" top="20.0" />
                      </HBox.margin>
                   </Separator>
-                  <ComboBox fx:id="cbAlgoritmo" prefHeight="0.0" prefWidth="133.0" promptText="Seleccione..." styleClass="txt-buscar">
-                     <HBox.margin>
-                        <Insets top="30.0" />
-                     </HBox.margin>
-                  </ComboBox>
-                  <TextField fx:id="txtBuscar" onAction="#buscar" prefHeight="18.0" prefWidth="214.0" promptText="Buscar" styleClass="txt-buscar">
-                     <HBox.margin>
-                        <Insets top="30.0" />
-                     </HBox.margin>
-                     <font>
-                        <Font size="13.0" />
-                     </font>
-                  </TextField>
-                  <Separator orientation="VERTICAL" prefHeight="60.0" prefWidth="0.0">
+                  <VBox prefHeight="100.0" prefWidth="477.0">
+                     <children>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Buscar">
+                           <font>
+                              <Font name="Arial" size="15.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="200.0" top="15.0" />
+                           </VBox.margin>
+                        </Text>
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+                           <children>
+                              <ComboBox fx:id="cbAlgoritmo" prefHeight="0.0" prefWidth="133.0" promptText="Seleccione..." styleClass="txt-buscar">
+                                 <HBox.margin>
+                                    <Insets left="30.0" top="25.0" />
+                                 </HBox.margin>
+                                 <effect>
+                                    <DropShadow height="9.24" radius="4.3100000000000005" width="10.0" />
+                                 </effect>
+                              </ComboBox>
+                              <TextField fx:id="txtBuscar" onAction="#buscar" prefHeight="18.0" prefWidth="214.0" promptText="Buscar" styleClass="txt-buscar">
+                                 <HBox.margin>
+                                    <Insets top="25.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                                 <effect>
+                                    <DropShadow height="9.0" radius="4.25" width="10.0" />
+                                 </effect>
+                              </TextField>
+                              <Text fx:id="txtContador" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets top="30.0" />
+                                 </HBox.margin>
+                                 <effect>
+                                    <DropShadow height="9.24" radius="4.3100000000000005" width="10.0" />
+                                 </effect>
+                              </Text>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <Separator disable="true" orientation="VERTICAL" prefHeight="60.0" prefWidth="0.0">
                      <HBox.margin>
                         <Insets bottom="20.0" top="20.0" />
                      </HBox.margin>
@@ -59,12 +94,12 @@
             </HBox>
          </top>
          <center>
-            <JFXTextArea fx:id="txtTexto" editable="false" focusColor="#262626" onMouseClicked="#au" styleClass="txt" unFocusColor="#fc4f4f" BorderPane.alignment="CENTER">
+            <JFXTextArea fx:id="txtTexto" editable="false" focusColor="#323130" onMouseClicked="#reset" styleClass="txt" unFocusColor="#323130" BorderPane.alignment="CENTER">
                <font>
-                  <Font name="Arial" size="16.0" />
+                  <Font name="Arial" size="15.0" />
                </font>
                <padding>
-                  <Insets left="100.0" right="100.0" top="50.0" />
+                  <Insets left="50.0" top="50.0" />
                </padding>
                <BorderPane.margin>
                   <Insets top="10.0" />
