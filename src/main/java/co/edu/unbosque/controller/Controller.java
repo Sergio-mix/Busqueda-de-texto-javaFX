@@ -31,8 +31,9 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         try {
-            cbAlgoritmo.getItems().add(0, "KMP");
-            cbAlgoritmo.getItems().add(1, "BM");
+            cbAlgoritmo.getItems().add(0, "Basic");
+            cbAlgoritmo.getItems().add(1, "KMP");
+            cbAlgoritmo.getItems().add(2, "BM");
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
@@ -71,12 +72,14 @@ public class Controller implements Initializable {
                     if (!cbAlgoritmo.getSelectionModel().isEmpty()) {
 
                         switch (cbAlgoritmo.getSelectionModel().getSelectedIndex()) {
-
                             case 0:
-                                select(Algoritmos_De_Busqueda.kMP(busqueda, texto));
+                                select(Algoritmos_De_Busqueda.basic(texto, busqueda));
                                 break;
                             case 1:
-                                select(Algoritmos_De_Busqueda.bM(busqueda, texto));
+                                select(Algoritmos_De_Busqueda.kMP(texto, busqueda));
+                                break;
+                            case 2:
+                                select(Algoritmos_De_Busqueda.bM(texto, busqueda));
                                 break;
                         }
                     } else {
@@ -99,17 +102,18 @@ public class Controller implements Initializable {
      * @param range lista de rangos
      */
     @FXML
-    private void select(List<Integer[]> range) {
+    private void select(List<String> range) {
         try {
-            txtTexto.setStyle("-fx-highlight-fill: #ffe800;");
-
-            for (Integer[] i : range) {
-                txtTexto.selectRange(i[0], i[1]);
+            for (String i : range) {
+                txtTexto.selectRange(Integer.parseInt(i.split(" ")[0]),
+                        Integer.parseInt(i.split(" ")[1]));
             }
+            txtTexto.setStyle("-fx-highlight-fill: #ffe800;");
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
     }
+
 
     @FXML
     private void au() {
