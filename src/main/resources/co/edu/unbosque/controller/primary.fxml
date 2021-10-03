@@ -14,51 +14,48 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" styleClass="body" stylesheets="@css/index-style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.unbosque.controller.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="630.0" prefWidth="1200.0" styleClass="body" stylesheets="@css/index-style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.unbosque.controller.Controller">
    <children>
       <BorderPane layoutX="202.0" layoutY="88.0" prefHeight="200.0" prefWidth="200.0" styleClass="body" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
-            <HBox onMouseClicked="#reset" prefHeight="130.0" prefWidth="200.0" spacing="20.0" styleClass="pane" BorderPane.alignment="CENTER">
+            <HBox onMouseClicked="#reset" prefHeight="117.0" prefWidth="1200.0" spacing="20.0" styleClass="pane" BorderPane.alignment="CENTER">
                <children>
-                  <Button mnemonicParsing="false" onAction="#cargarArchivo" prefHeight="48.0" prefWidth="63.0" styleClass="button-archivo" text="Abrir" textAlignment="CENTER" textFill="WHITE">
+                  <Button mnemonicParsing="false" onAction="#cargarArchivo" prefHeight="37.0" prefWidth="67.0" styleClass="button-archivo" text="Archivo" textAlignment="CENTER" textFill="WHITE">
                      <font>
-                        <Font name="Arial" size="14.0" />
+                        <Font name="Arial" size="13.0" />
                      </font>
                      <HBox.margin>
-                        <Insets left="20.0" top="45.0" />
+                        <Insets left="20.0" top="42.0" />
                      </HBox.margin>
-                     <effect>
-                        <DropShadow height="8.47" radius="4.1175" width="10.0" />
-                     </effect>
                   </Button>
                   <Separator orientation="VERTICAL" prefHeight="60.0" prefWidth="0.0">
                      <HBox.margin>
-                        <Insets bottom="20.0" top="20.0" />
+                        <Insets bottom="30.0" top="30.0" />
                      </HBox.margin>
                   </Separator>
-                  <VBox prefHeight="129.0" prefWidth="393.0">
+                  <VBox prefHeight="116.0" prefWidth="459.0">
                      <children>
                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Buscar">
                            <font>
                               <Font name="Arial" size="15.0" />
                            </font>
                            <VBox.margin>
-                              <Insets left="240.0" top="15.0" />
+                              <Insets left="260.0" top="15.0" />
                            </VBox.margin>
                         </Text>
-                        <HBox prefHeight="98.0" prefWidth="395.0" spacing="30.0">
+                        <HBox prefHeight="84.0" prefWidth="446.0" spacing="30.0">
                            <children>
                               <ComboBox fx:id="cbAlgoritmo" prefHeight="0.0" prefWidth="133.0" promptText="Algoritmo..." styleClass="txt-buscar">
                                  <HBox.margin>
-                                    <Insets left="30.0" top="25.0" />
+                                    <Insets left="30.0" top="15.0" />
                                  </HBox.margin>
                                  <effect>
                                     <DropShadow height="9.24" radius="4.3100000000000005" width="10.0" />
                                  </effect>
                               </ComboBox>
-                              <TextField fx:id="txtBuscar" onAction="#buscar" prefHeight="30.0" prefWidth="190.0" promptText="Buscar" styleClass="txt-buscar">
+                              <TextField fx:id="txtBuscar" onAction="#buscar" prefHeight="30.0" prefWidth="250.0" promptText="Buscar" styleClass="txt-buscar">
                                  <HBox.margin>
-                                    <Insets top="25.0" />
+                                    <Insets top="15.0" />
                                  </HBox.margin>
                                  <font>
                                     <Font size="13.0" />
@@ -76,7 +73,7 @@
                         <Font name="Arial" size="14.0" />
                      </font>
                      <HBox.margin>
-                        <Insets top="60.0" />
+                        <Insets top="54.0" />
                      </HBox.margin>
                      <effect>
                         <DropShadow height="9.24" radius="4.3100000000000005" width="10.0" />
@@ -84,7 +81,7 @@
                   </Text>
                   <Separator disable="true" orientation="VERTICAL" prefHeight="60.0" prefWidth="0.0">
                      <HBox.margin>
-                        <Insets bottom="20.0" top="20.0" />
+                        <Insets bottom="30.0" top="30.0" />
                      </HBox.margin>
                   </Separator>
                </children>
@@ -94,12 +91,12 @@
             </HBox>
          </top>
          <center>
-            <JFXTextArea fx:id="txtTexto" editable="false" focusColor="#323130" onMouseClicked="#reset" styleClass="txt" unFocusColor="#323130" BorderPane.alignment="CENTER">
+            <JFXTextArea fx:id="txtTexto" editable="false" focusColor="#323130" onMouseClicked="#reset" styleClass="txt" unFocusColor="#323130" BorderPane.alignment="CENTER_RIGHT">
                <font>
                   <Font name="Arial" size="15.0" />
                </font>
                <padding>
-                  <Insets left="50.0" top="30.0" />
+                  <Insets bottom="15.0" left="50.0" right="30.0" top="15.0" />
                </padding>
                <BorderPane.margin>
                   <Insets top="10.0" />

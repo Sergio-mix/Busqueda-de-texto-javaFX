@@ -84,10 +84,8 @@ public class Algoritmos_De_Busqueda {
         }
     }
 
-    static int NO_OF_CHARS = 99999999;
-
-    static int max(int a, int b) {
-        return Math.max(a, b);
+    private static int max(int b) {
+        return Math.max(1, b);
     }
 
     public static List<List<Integer>> bM(String text, String buscar) {
@@ -97,6 +95,7 @@ public class Algoritmos_De_Busqueda {
             int m = buscar.length();
             int n = text.length();
 
+            int NO_OF_CHARS = 99999999;
             int[] badchar = new int[NO_OF_CHARS * n];
 
             int s = 0;
@@ -115,7 +114,7 @@ public class Algoritmos_De_Busqueda {
                     s += (s + m < n) ? m - badchar[text.charAt(s + m)] : 1;
 
                 } else
-                    s += max(1, j - badchar[text.charAt(s + j)]);
+                    s += max(j - badchar[text.charAt(s + j)]);
             }
 
             return list;
