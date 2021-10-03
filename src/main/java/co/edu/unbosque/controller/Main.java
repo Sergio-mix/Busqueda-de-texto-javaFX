@@ -9,6 +9,7 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 
 /**
  * JavaFX App
@@ -20,8 +21,7 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("primary"));
-//        Image image = new Image("/icons/file.png");
-//        stage.getIcons().add(image);
+        stage.getIcons().add(new Image(String.valueOf(getClass().getResource("/icons/file_1.png"))));
         stage.setTitle("Selector de Archivos");
         stage.setScene(scene);
         stage.show();
