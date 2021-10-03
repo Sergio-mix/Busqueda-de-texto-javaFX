@@ -3,9 +3,11 @@
 }
 
 .pane {
-    -fx-effect: dropshadow(gaussian, rgb(37, 237, 255), 10, 0.5, 0.0, 0.0);
+    -fx-effect: dropshadow(gaussian, rgb(43, 42, 42), 10, 0.5, 0.0, 0.0);
     -fx-background-color: #262626;
     -fx-border-style: solid;
+    -fx-border-radius: 5 5 5 5;
+    -fx-background-radius: 5 5 5 5;
 }
 
 .button-buscar {
@@ -14,8 +16,9 @@
 }
 
 .button-archivo {
-    -fx-background-color: #636262;
+    -fx-background-color: #3d3c3c;
     -fx-background-radius: 5;
+    -fx-effect: dropshadow(gaussian, rgb(62, 61, 61), 10, 0.5, 0.0, 0.0);
 }
 
 .txt-buscar {
@@ -29,6 +32,7 @@
     -fx-background-color: #323130;
     -fx-text-fill: #FFFFFF;
     -fx-highlight-fill: #878686;
+    text-align: right;
 }
 
 .separator *.line {
