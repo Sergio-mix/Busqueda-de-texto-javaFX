@@ -4,20 +4,17 @@ package co.edu.unbosque.controller;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
-import java.util.function.UnaryOperator;
 
 import co.edu.unbosque.model.Algoritmos_De_Busqueda;
 import co.edu.unbosque.persistence.OperacionArchivo;
-import javafx.collections.ListChangeListener;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import com.jfoenix.controls.JFXTextArea;
-import javafx.scene.control.TextFormatter;
 import javafx.scene.text.Text;
-import javafx.util.StringConverter;
+
 
 
 public class Controller implements Initializable {
@@ -38,7 +35,7 @@ public class Controller implements Initializable {
 
     private Thread hilo;
 
-    private static final int TIEMPO = 500;
+    private static final int TIEMPO = 800;
 
 
     @Override
@@ -114,6 +111,7 @@ public class Controller implements Initializable {
     @FXML
     private void select(List<List<Integer>> range) {
         try {
+            txtTexto.deselect();
             txtTexto.setStyle("-fx-highlight-fill: #ffe800;");
             txtContador.setText(range.size() + " Resultados");
 
