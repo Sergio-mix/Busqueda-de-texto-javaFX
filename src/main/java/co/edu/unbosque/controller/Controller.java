@@ -9,6 +9,7 @@ import co.edu.unbosque.model.Algoritmos_De_Busqueda;
 import co.edu.unbosque.persistence.OperacionArchivo;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
@@ -114,20 +115,18 @@ public class Controller implements Initializable {
             txtTexto.deselect();
             txtTexto.setStyle("-fx-highlight-fill: #ffe800;");
             txtContador.setText(range.size() + " Resultados");
-
             if (range.size() != 1) {
                 Runnable runnable = new Runnable() {
                     @Override
                     public void run() {
-                        try {
-                            for (List<Integer> i : range) {
-                                txtTexto.selectRange(i.get(0), i.get(1));
-                                Thread.sleep(TIEMPO);
+                            try {
+                                for (List<Integer> i : range) {
+                                    txtTexto.selectRange(i.get(0), i.get(1));
+                                    Thread.sleep(TIEMPO);
+                                }
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
                             }
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                        hilo.stop();
                     }
                 };
 

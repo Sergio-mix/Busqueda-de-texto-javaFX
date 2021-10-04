@@ -6,14 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Menu" />
         <module name="Busqueda-Archivo-java" />
       </profile>
     </annotationProcessing>
-  </component>
-  <component name="JavacSettings">
-    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="Busqueda-Archivo-java" options="--add-exports javafx.graphics/com.sun.javafx.util=org.example --add-exports javafx.controls/com.sun.javafx.scene.control=org.example --add-exports javafx.base/com.sun.javafx.binding=org.example --add-exports javafx.graphics/com.sun.javafx.scene=org.example" />
-    </option>
+    <bytecodeTargetLevel>
+      <module name="Busqueda-Archivo-java" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>
