@@ -26,6 +26,7 @@ public class Algoritmos_De_Busqueda {
                         l.add(i);
                         l.add(z);
                         list.add(l);
+                        i += s - 1;
                     }
 
                 } else {
@@ -106,10 +107,10 @@ public class Algoritmos_De_Busqueda {
                     j--;
 
                 if (j < 0) {
-                        List<Integer> l = new ArrayList<>();
-                        l.add(s);
-                        l.add(s + m);
-                        list.add(l);
+                    List<Integer> l = new ArrayList<>();
+                    l.add(s);
+                    l.add(s + m);
+                    list.add(l);
 
                     s += (s + m < n) ? m - badchar[text.charAt(s + m)] : 1;
 
@@ -118,6 +119,7 @@ public class Algoritmos_De_Busqueda {
             }
 
             return list;
+
         } catch (Exception e) {
             return null;
         }
