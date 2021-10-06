@@ -65,7 +65,6 @@ public class OperacionArchivo {
 
         ajustes.put("algoritmo", Integer.parseInt(Objects.requireNonNull(p.getProperty("algoritmo"))));
         ajustes.put("presicion", Boolean.parseBoolean(Objects.requireNonNull(p.getProperty("presicion"))));
-        ajustes.put("tema", Boolean.parseBoolean(Objects.requireNonNull(p.getProperty("tema"))));
         ajustes.put("selectColor", Objects.requireNonNull(p.getProperty("selectColor")));
         ajustes.put("tiempo", Double.parseDouble(Objects.requireNonNull(p.getProperty("tiempo"))));
     }

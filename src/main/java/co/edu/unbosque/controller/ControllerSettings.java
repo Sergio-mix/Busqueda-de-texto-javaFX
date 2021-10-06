@@ -19,9 +19,6 @@ public class ControllerSettings implements Initializable {
     private JFXToggleButton blPresicion;
 
     @FXML
-    private JFXToggleButton blTema;
-
-    @FXML
     private ComboBox<String> cbAlgoritmo;
 
     @FXML
@@ -39,15 +36,6 @@ public class ControllerSettings implements Initializable {
 
             cbAlgoritmo.getSelectionModel().select(Integer.parseInt(String.valueOf(OperacionArchivo.getAjustes().get("algoritmo"))));
             blPresicion.setSelected((Boolean) OperacionArchivo.getAjustes().get("presicion"));
-
-            Boolean tema = Boolean.parseBoolean(String.valueOf(OperacionArchivo.getAjustes().get("tema")));
-
-            if (tema) {
-                blTema.setText("Oscuro");
-                blTema.setSelected(true);
-            } else {
-                blTema.setText("Claro");
-            }
 
             pikerColor.setValue(Color.web(String.valueOf(OperacionArchivo.getAjustes().get("selectColor"))));
             timeRange.setValue((Double) OperacionArchivo.getAjustes().get("tiempo"));
@@ -69,20 +57,6 @@ public class ControllerSettings implements Initializable {
         OperacionArchivo operacionArchivo = new OperacionArchivo();
         OperacionArchivo.getAjustes().put("presicion", blPresicion.isSelected());
         operacionArchivo.escribirProperties("presicion", blPresicion.isSelected());
-    }
-
-    @FXML
-    private void updateTema() throws IOException {
-        Controller controller = new Controller();
-        OperacionArchivo operacionArchivo = new OperacionArchivo();
-        OperacionArchivo.getAjustes().put("tema", blTema.isSelected());
-        operacionArchivo.escribirProperties("tema", blTema.isSelected());
-
-        if ((Boolean) OperacionArchivo.getAjustes().get("tema")) {
-            blTema.setText("Oscuro");
-        } else {
-            blTema.setText("Claro");
-        }
     }
 
     @FXML
