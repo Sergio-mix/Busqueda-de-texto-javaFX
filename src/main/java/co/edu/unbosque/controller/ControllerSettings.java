@@ -41,6 +41,7 @@ public class ControllerSettings implements Initializable {
             blPresicion.setSelected((Boolean) OperacionArchivo.getAjustes().get("presicion"));
 
             Boolean tema = Boolean.parseBoolean(String.valueOf(OperacionArchivo.getAjustes().get("tema")));
+
             if (tema) {
                 blTema.setText("Oscuro");
                 blTema.setSelected(true);
@@ -72,6 +73,7 @@ public class ControllerSettings implements Initializable {
 
     @FXML
     private void updateTema() throws IOException {
+        Controller controller = new Controller();
         OperacionArchivo operacionArchivo = new OperacionArchivo();
         OperacionArchivo.getAjustes().put("tema", blTema.isSelected());
         operacionArchivo.escribirProperties("tema", blTema.isSelected());

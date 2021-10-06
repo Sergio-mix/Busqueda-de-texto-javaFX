@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXSlider?>
 <?import com.jfoenix.controls.JFXToggleButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
@@ -34,24 +35,27 @@
                            <children>
                               <Text fill="#e1e1e1" strokeType="OUTSIDE" strokeWidth="0.0" text="Seleccionar Algoritmo:">
                                  <font>
-                                    <Font size="14.0" />
+                                    <Font name="Arial" size="15.0" />
                                  </font>
                                  <HBox.margin>
                                     <Insets top="10.0" />
                                  </HBox.margin>
                               </Text>
-                              <JFXComboBox fx:id="cbAlgoritmo" focusColor="#3d3c3c" onAction="#updateAlgoritmo" prefHeight="30.0" prefWidth="130.0" styleClass="button-algiritmo" stylesheets="@css/index-style.css" unFocusColor="#3d3c3c">
+                              <ComboBox fx:id="cbAlgoritmo" onAction="#updateAlgoritmo" prefHeight="30.0" prefWidth="130.0" promptText="Seleccione..." styleClass="button-archivo" stylesheets="@css/index-style.css">
                                  <HBox.margin>
                                     <Insets top="10.0" />
                                  </HBox.margin>
-                              </JFXComboBox>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </ComboBox>
                            </children>
                         </HBox>
-                        <HBox prefHeight="70.0" prefWidth="200.0" spacing="70.0">
+                        <HBox prefHeight="70.0" prefWidth="200.0" spacing="58.0">
                            <children>
                               <Text fill="#e1e1e1" strokeType="OUTSIDE" strokeWidth="0.0" text="Busqueda Precisa:">
                                  <font>
-                                    <Font size="14.0" />
+                                    <Font name="Arial" size="15.0" />
                                  </font>
                                  <HBox.margin>
                                     <Insets top="20.0" />
@@ -68,7 +72,7 @@
                            <children>
                               <Text fill="#e1e1e1" strokeType="OUTSIDE" strokeWidth="0.0" text="Tema:">
                                  <font>
-                                    <Font size="14.0" />
+                                    <Font name="Arial" size="15.0" />
                                  </font>
                                  <HBox.margin>
                                     <Insets top="20.0" />
@@ -81,20 +85,23 @@
                               </JFXToggleButton>
                            </children>
                         </HBox>
-                        <HBox prefHeight="70.0" prefWidth="200.0" spacing="100.0">
+                        <HBox prefHeight="70.0" prefWidth="200.0" spacing="110.0">
                            <children>
                               <Text fill="#e1e1e1" strokeType="OUTSIDE" strokeWidth="0.0" text="Color Select:">
                                  <font>
-                                    <Font size="14.0" />
+                                    <Font name="Arial" size="15.0" />
                                  </font>
                                  <HBox.margin>
                                     <Insets top="20.0" />
                                  </HBox.margin>
                               </Text>
-                              <ColorPicker fx:id="pikerColor" onAction="#updateColorSelect" prefHeight="30.0" prefWidth="130.0" styleClass="txt-buscar" stylesheets="@css/index-style.css">
+                              <ColorPicker fx:id="pikerColor" onAction="#updateColorSelect" prefHeight="30.0" prefWidth="130.0" styleClass="button-archivo" stylesheets="@css/index-style.css">
                                  <HBox.margin>
                                     <Insets top="20.0" />
                                  </HBox.margin>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
                               </ColorPicker>
                            </children>
                         </HBox>
@@ -109,7 +116,7 @@
                            <children>
                               <Text fill="#e1e1e1" strokeType="OUTSIDE" strokeWidth="0.0" text="Tiempo:">
                                  <font>
-                                    <Font size="14.0" />
+                                    <Font size="15.0" />
                                  </font>
                                  <HBox.margin>
                                     <Insets top="10.0" />
@@ -117,7 +124,7 @@
                               </Text>
                               <JFXSlider fx:id="timeRange" max="5.0" onMouseClicked="#updateTiempo" value="1.0">
                                  <HBox.margin>
-                                    <Insets top="10.0" />
+                                    <Insets top="15.0" />
                                  </HBox.margin>
                               </JFXSlider>
                            </children>

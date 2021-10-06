@@ -62,7 +62,7 @@
                         </JFXButton>
                      </children>
                   </HBox>
-                  <Label fx:id="txtContador" layoutX="572.0" layoutY="233.0" prefHeight="27.0" prefWidth="157.0" styleClass="txtContador" textFill="#918b8b">
+                  <Label fx:id="txtContador" layoutX="599.0" layoutY="233.0" prefHeight="27.0" prefWidth="157.0" styleClass="txtContador" textFill="#b9b5b5">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>

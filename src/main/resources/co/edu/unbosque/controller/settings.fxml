@@ -35,27 +35,27 @@
                            <children>
                               <Text fill="#e1e1e1" strokeType="OUTSIDE" strokeWidth="0.0" text="Seleccionar Algoritmo:">
                                  <font>
-                                    <Font size="14.0" />
+                                    <Font name="Arial" size="15.0" />
                                  </font>
                                  <HBox.margin>
                                     <Insets top="10.0" />
                                  </HBox.margin>
                               </Text>
-                              <ComboBox fx:id="cbAlgoritmo" onAction="#updateAlgoritmo" prefHeight="30.0" prefWidth="130.0" promptText="Seleccione..." style="-fx-background-color: #;" styleClass="button-archivo" stylesheets="@css/index-style.css">
-                                 <effect>
-                                    <DropShadow height="9.24" radius="4.3100000000000005" width="10.0" />
-                                 </effect>
+                              <ComboBox fx:id="cbAlgoritmo" onAction="#updateAlgoritmo" prefHeight="30.0" prefWidth="130.0" promptText="Seleccione..." styleClass="button-archivo" stylesheets="@css/index-style.css">
                                  <HBox.margin>
                                     <Insets top="10.0" />
                                  </HBox.margin>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
                               </ComboBox>
                            </children>
                         </HBox>
-                        <HBox prefHeight="70.0" prefWidth="200.0" spacing="70.0">
+                        <HBox prefHeight="70.0" prefWidth="200.0" spacing="58.0">
                            <children>
                               <Text fill="#e1e1e1" strokeType="OUTSIDE" strokeWidth="0.0" text="Busqueda Precisa:">
                                  <font>
-                                    <Font size="14.0" />
+                                    <Font name="Arial" size="15.0" />
                                  </font>
                                  <HBox.margin>
                                     <Insets top="20.0" />
@@ -72,7 +72,7 @@
                            <children>
                               <Text fill="#e1e1e1" strokeType="OUTSIDE" strokeWidth="0.0" text="Tema:">
                                  <font>
-                                    <Font size="14.0" />
+                                    <Font name="Arial" size="15.0" />
                                  </font>
                                  <HBox.margin>
                                     <Insets top="20.0" />
@@ -89,7 +89,7 @@
                            <children>
                               <Text fill="#e1e1e1" strokeType="OUTSIDE" strokeWidth="0.0" text="Color Select:">
                                  <font>
-                                    <Font size="14.0" />
+                                    <Font name="Arial" size="15.0" />
                                  </font>
                                  <HBox.margin>
                                     <Insets top="20.0" />
@@ -116,7 +116,7 @@
                            <children>
                               <Text fill="#e1e1e1" strokeType="OUTSIDE" strokeWidth="0.0" text="Tiempo:">
                                  <font>
-                                    <Font size="14.0" />
+                                    <Font size="15.0" />
                                  </font>
                                  <HBox.margin>
                                     <Insets top="10.0" />
@@ -124,7 +124,7 @@
                               </Text>
                               <JFXSlider fx:id="timeRange" max="5.0" onMouseClicked="#updateTiempo" value="1.0">
                                  <HBox.margin>
-                                    <Insets top="10.0" />
+                                    <Insets top="15.0" />
                                  </HBox.margin>
                               </JFXSlider>
                            </children>

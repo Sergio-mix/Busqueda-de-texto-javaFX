@@ -120,6 +120,7 @@ public class Controller implements Initializable {
      */
     @FXML
     private void select(List<List<Integer>> range) {
+
         try {
             txtTexto.deselect();
             txtTexto.setStyle("-fx-highlight-fill:" + OperacionArchivo.getAjustes().get("selectColor") + ";");

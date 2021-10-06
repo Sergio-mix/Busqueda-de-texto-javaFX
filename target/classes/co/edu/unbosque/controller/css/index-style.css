@@ -24,12 +24,6 @@
     -fx-background-radius: 5;
 }
 
-.button-algiritmo {
-    -fx-background-color: #3d3c3c;
-    -fx-background-radius: 5;
-    -fx-prompt-text-fill: #FFFFFF;
-}
-
 .button-home:hover {
     -fx-text-fill: #FFFFFF;
 }
