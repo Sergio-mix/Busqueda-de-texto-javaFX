@@ -22,6 +22,7 @@ public class Main extends Application {
         scene = new Scene(loadFXML("primary"));
         stage.getIcons().add(new Image(String.valueOf(getClass().getResource("/icons/file_1.png"))));
         stage.setTitle("Selector de Archivos");
+        stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
 

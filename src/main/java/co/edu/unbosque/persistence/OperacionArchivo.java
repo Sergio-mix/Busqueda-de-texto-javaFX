@@ -3,12 +3,15 @@ package co.edu.unbosque.persistence;
 import javafx.stage.FileChooser;
 import javafx.stage.Window;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
+import java.io.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Properties;
 
 public class OperacionArchivo {
 
+    private static Map<String, Object> ajustes = new HashMap<>();
     private static Window stage;
 
     public OperacionArchivo() {
@@ -55,4 +58,27 @@ public class OperacionArchivo {
         }
         return null;
     }
+
+    public void leerProperties() throws IOException {
+        Properties p = new Properties();
+        p.load(new FileReader("src\\main\\resources\\database\\file.properties"));
+
+        ajustes.put("algoritmo", Integer.parseInt(Objects.requireNonNull(p.getProperty("algoritmo"))));
+        ajustes.put("presicion", Boolean.parseBoolean(Objects.requireNonNull(p.getProperty("presicion"))));
+        ajustes.put("tema", Boolean.parseBoolean(Objects.requireNonNull(p.getProperty("tema"))));
+        ajustes.put("selectColor", Objects.requireNonNull(p.getProperty("selectColor")));
+        ajustes.put("tiempo", Double.parseDouble(Objects.requireNonNull(p.getProperty("tiempo"))));
+    }
+
+    public void escribirProperties(String propiedad, Object valor) throws IOException {
+        Properties p = new Properties();
+        p.load(new FileReader("src\\main\\resources\\database\\file.properties"));
+        p.setProperty(propiedad, String.valueOf(valor));
+        p.store(new FileWriter("src\\main\\resources\\database\\file.properties"), "");
+    }
+
+    public static Map<String, Object> getAjustes() {
+        return ajustes;
+    }
+
 }
