@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXSlider?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="750.0" style="-fx-background-color: #323130;" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.unbosque.controller.ControllerSettings">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajustes" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+               <BorderPane.margin>
+                  <Insets top="30.0" />
+               </BorderPane.margin>
+            </Text>
+         </top>
+         <center>
+            <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox prefHeight="282.0" prefWidth="362.0">
+                     <children>
+                        <HBox prefHeight="70.0" prefWidth="200.0" spacing="50.0">
+                           <children>
+                              <Text fill="#e1e1e1" strokeType="OUTSIDE" strokeWidth="0.0" text="Seleccionar Algoritmo:">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets top="10.0" />
+                                 </HBox.margin>
+                              </Text>
+                              <JFXComboBox fx:id="cbAlgoritmo" focusColor="#3d3c3c" onAction="#updateAlgoritmo" prefHeight="30.0" prefWidth="130.0" styleClass="button-algiritmo" stylesheets="@css/index-style.css" unFocusColor="#3d3c3c">
+                                 <HBox.margin>
+                                    <Insets top="10.0" />
+                                 </HBox.margin>
+                              </JFXComboBox>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="70.0" prefWidth="200.0" spacing="70.0">
+                           <children>
+                              <Text fill="#e1e1e1" strokeType="OUTSIDE" strokeWidth="0.0" text="Busqueda Precisa:">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets top="20.0" />
+                                 </HBox.margin>
+                              </Text>
+                              <JFXToggleButton fx:id="blPresicion" onAction="#updatePresicion" prefHeight="26.0" prefWidth="130.0" text="Presición" textFill="WHITE" toggleColor="#319957" toggleLineColor="#5cb472" unToggleColor="#515151" unToggleLineColor="#8e8a8a">
+                                 <font>
+                                    <Font name="Arial" size="13.0" />
+                                 </font>
+                              </JFXToggleButton>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="70.0" prefWidth="200.0" spacing="130.0">
+                           <children>
+                              <Text fill="#e1e1e1" strokeType="OUTSIDE" strokeWidth="0.0" text="Tema:">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets top="20.0" />
+                                 </HBox.margin>
+                              </Text>
+                              <JFXToggleButton fx:id="blTema" onAction="#updateTema" prefHeight="26.0" prefWidth="130.0" text="Color" textFill="WHITE" toggleColor="#319957" toggleLineColor="#5cb472" unToggleColor="#515151" unToggleLineColor="#8e8a8a">
+                                 <font>
+                                    <Font name="Arial" size="13.0" />
+                                 </font>
+                              </JFXToggleButton>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="70.0" prefWidth="200.0" spacing="100.0">
+                           <children>
+                              <Text fill="#e1e1e1" strokeType="OUTSIDE" strokeWidth="0.0" text="Color Select:">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets top="20.0" />
+                                 </HBox.margin>
+                              </Text>
+                              <ColorPicker fx:id="pikerColor" onAction="#updateColorSelect" prefHeight="30.0" prefWidth="130.0" styleClass="txt-buscar" stylesheets="@css/index-style.css">
+                                 <HBox.margin>
+                                    <Insets top="20.0" />
+                                 </HBox.margin>
+                              </ColorPicker>
+                           </children>
+                        </HBox>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox prefHeight="282.0" prefWidth="362.0">
+                     <children>
+                        <HBox prefHeight="70.0" prefWidth="200.0" spacing="100.0">
+                           <children>
+                              <Text fill="#e1e1e1" strokeType="OUTSIDE" strokeWidth="0.0" text="Tiempo:">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets top="10.0" />
+                                 </HBox.margin>
+                              </Text>
+                              <JFXSlider fx:id="timeRange" max="5.0" onMouseClicked="#updateTiempo" value="1.0">
+                                 <HBox.margin>
+                                    <Insets top="10.0" />
+                                 </HBox.margin>
+                              </JFXSlider>
+                           </children>
+                        </HBox>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+               <BorderPane.margin>
+                  <Insets top="20.0" />
+               </BorderPane.margin>
+            </HBox>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
