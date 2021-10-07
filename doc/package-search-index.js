@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"m":"org.example","l":"co.edu.unbosque.controller"},{"m":"org.example","l":"co.edu.unbosque.model"},{"m":"org.example","l":"co.edu.unbosque.persistence"}]

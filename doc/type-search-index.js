@@ -1,0 +1,1 @@
+typeSearchIndex = [{"p":"co.edu.unbosque.model","l":"Algoritmos_De_Busqueda"},{"l":"All Classes","url":"allclasses-index.html"},{"p":"co.edu.unbosque.controller","l":"Controller"},{"p":"co.edu.unbosque.controller","l":"ControllerSettings"},{"p":"co.edu.unbosque.controller","l":"Main"},{"p":"co.edu.unbosque.persistence","l":"OperacionArchivo"}]

@@ -108,8 +108,8 @@ public class Algoritmos_De_Busqueda {
             int m = buscar.length();
             int n = text.length();
 
-            int NO_OF_CHARS = 99999999;
-            int[] badchar = new int[NO_OF_CHARS * n];
+            int NO_OF_CHARS = 1000 * 1000 * 1000;
+            int[] badchar = new int[NO_OF_CHARS];
 
             int s = 0;
             while (s <= (n - m)) {
