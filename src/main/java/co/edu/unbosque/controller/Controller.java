@@ -94,15 +94,16 @@ public class Controller implements Initializable {
                                 select(Algoritmos_De_Busqueda.bM(texto, busqueda));
                                 break;
                         }
-                    } else {
+                    }else {
+                    	String t2= texto;
+                        t2 = t2.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");
                         switch ((Integer) OperacionArchivo.getAjustes().get("algoritmo")) {
-//                            String t2= texto;
-//                            t2 = t2.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");
+                   
                             case 0:
-//                                select(Algoritmos_De_Busqueda.kMP(t2.toLowerCase(Locale.ROOT), busqueda.toLowerCase(Locale.ROOT)));
+                                select(Algoritmos_De_Busqueda.kMP(t2.toLowerCase(Locale.ROOT), busqueda.toLowerCase(Locale.ROOT)));
                                 break;
                             case 1:
-//                                select(Algoritmos_De_Busqueda.bM(t2.toLowerCase(Locale.ROOT), busqueda.toLowerCase(Locale.ROOT)));
+                                select(Algoritmos_De_Busqueda.bM(t2.toLowerCase(Locale.ROOT), busqueda.toLowerCase(Locale.ROOT)));
                                 break;
                         }
                     }
