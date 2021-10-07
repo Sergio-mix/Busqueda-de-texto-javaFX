@@ -30,9 +30,8 @@ public class ControllerSettings implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
-            cbAlgoritmo.getItems().add(0, "Basic");
-            cbAlgoritmo.getItems().add(1, "KMP");
-            cbAlgoritmo.getItems().add(2, "BM");
+            cbAlgoritmo.getItems().add(0, "KMP");
+            cbAlgoritmo.getItems().add(1, "BM");
 
             cbAlgoritmo.getSelectionModel().select(Integer.parseInt(String.valueOf(OperacionArchivo.getAjustes().get("algoritmo"))));
             blPresicion.setSelected((Boolean) OperacionArchivo.getAjustes().get("presicion"));

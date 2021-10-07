@@ -2,6 +2,7 @@ package co.edu.unbosque.controller;
 
 
 import java.net.URL;
+import java.text.Normalizer;
 import java.util.List;
 import java.util.Locale;
 import java.util.ResourceBundle;
@@ -87,25 +88,21 @@ public class Controller implements Initializable {
                     if ((Boolean) OperacionArchivo.getAjustes().get("presicion")) {
                         switch ((Integer) OperacionArchivo.getAjustes().get("algoritmo")) {
                             case 0:
-                                select(Algoritmos_De_Busqueda.basic(texto, busqueda));
-                                break;
-                            case 1:
                                 select(Algoritmos_De_Busqueda.kMP(texto, busqueda));
                                 break;
-                            case 2:
+                            case 1:
                                 select(Algoritmos_De_Busqueda.bM(texto, busqueda));
                                 break;
                         }
                     } else {
                         switch ((Integer) OperacionArchivo.getAjustes().get("algoritmo")) {
+//                            String t2= texto;
+//                            t2 = t2.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");
                             case 0:
-                                select(Algoritmos_De_Busqueda.basic(texto.toLowerCase(Locale.ROOT), busqueda.toLowerCase(Locale.ROOT)));
+//                                select(Algoritmos_De_Busqueda.kMP(t2.toLowerCase(Locale.ROOT), busqueda.toLowerCase(Locale.ROOT)));
                                 break;
                             case 1:
-                                select(Algoritmos_De_Busqueda.kMP(texto.toLowerCase(Locale.ROOT), busqueda.toLowerCase(Locale.ROOT)));
-                                break;
-                            case 2:
-                                select(Algoritmos_De_Busqueda.bM(texto.toLowerCase(Locale.ROOT), busqueda.toLowerCase(Locale.ROOT)));
+//                                select(Algoritmos_De_Busqueda.bM(t2.toLowerCase(Locale.ROOT), busqueda.toLowerCase(Locale.ROOT)));
                                 break;
                         }
                     }
@@ -214,7 +211,7 @@ public class Controller implements Initializable {
     /**
      * Alert de info
      *
-     * @param texto de la alerta
+     * @param text de la alerta
      */
     @FXML
     private void mostrarAlertInfo(String text) {
