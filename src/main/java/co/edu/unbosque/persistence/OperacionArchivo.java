@@ -17,7 +17,9 @@ public class OperacionArchivo {
     public OperacionArchivo() {
 
     }
-
+    /**
+     * Este metodo hace la carga del archivo de texto en el que se desean buscar los caracteres
+     */
     public static String cargarArchivo() {
         FileReader fr = null;
         BufferedReader br;
@@ -58,7 +60,9 @@ public class OperacionArchivo {
         }
         return null;
     }
-
+    /**
+     * Este metodo guarda la configuracion de las propiedades elegidas por el usuario
+     */
     public void leerProperties() throws IOException {
         Properties p = new Properties();
         p.load(new FileReader("src\\main\\resources\\database\\file.properties"));
@@ -68,7 +72,9 @@ public class OperacionArchivo {
         ajustes.put("selectColor", Objects.requireNonNull(p.getProperty("selectColor")));
         ajustes.put("tiempo", Double.parseDouble(Objects.requireNonNull(p.getProperty("tiempo"))));
     }
-
+    /**
+     * Este metodo sobreescrive la configuracion de las propiedades elegidas por el usuario
+     */
     public void escribirProperties(String propiedad, Object valor) throws IOException {
         Properties p = new Properties();
         p.load(new FileReader("src\\main\\resources\\database\\file.properties"));

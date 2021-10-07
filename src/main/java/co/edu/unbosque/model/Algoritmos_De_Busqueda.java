@@ -8,7 +8,11 @@ public class Algoritmos_De_Busqueda {
     public Algoritmos_De_Busqueda() {
 
     }
-
+    /**
+     * Este metodo hace una busqueda del texto de forma basica
+     * @param text Este es el texto completo de donde se buscara la palabra
+     * @param buscar Es el caracter o palabra buscada por el ususario
+     */
     public static List<List<Integer>> basic(String text, String buscar) {
         try {
             List<List<Integer>> list = new ArrayList<>();
@@ -45,7 +49,11 @@ public class Algoritmos_De_Busqueda {
             return null;
         }
     }
-
+    /**
+     * Este metodo hace una busqueda del texto usando el algoritmo KMP
+     * @param text Este es el texto completo de donde se buscara la palabra
+     * @param buscar Es el caracter o palabra buscada por el ususario
+     */
     public static List<List<Integer>> kMP(String text, String buscar) {
         try {
             List<List<Integer>> list = new ArrayList<>();
@@ -88,7 +96,11 @@ public class Algoritmos_De_Busqueda {
     private static int max(int b) {
         return Math.max(1, b);
     }
-
+    /**
+     * Este metodo hace una busqueda del texto usando el algoritmo BM
+     * @param text Este es el texto completo de donde se buscara la palabra
+     * @param buscar Es el caracter o palabra buscada por el ususario
+     */
     public static List<List<Integer>> bM(String text, String buscar) {
         try {
             List<List<Integer>> list = new ArrayList<>();
