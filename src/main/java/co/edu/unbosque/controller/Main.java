@@ -17,7 +17,11 @@ public class Main extends Application {
 
     private static Scene scene;
 
-    @Override
+    
+    /**
+     * Este metodo inicializa el programa, carga los iconos y los textos
+     * @param stage se le envia un parametro de tipo Stage que es el contenedor de la parte visual en el programa
+     */
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("primary"));
         stage.getIcons().add(new Image(String.valueOf(getClass().getResource("/icons/file_1.png"))));
@@ -35,7 +39,10 @@ public class Main extends Application {
     static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
     }
-
+    /**
+     * Este metodo hace una busqueda del texto usando el algoritmo BM
+     * @param fxml Este es el texto completo de donde se buscara la palabra
+     */
     private static Parent loadFXML(String fxml) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(fxml + ".fxml"));
         return fxmlLoader.load();
