@@ -40,6 +40,11 @@ public class Controller implements Initializable {
 
 
     @Override
+    /**
+     * Metodo que inicia la aplicación
+     * @param location Ubicacion donde se ejecutará la aplicación
+     * @param resources Recursos usados para ejecutar la aplicación
+     */
     public void initialize(URL location, ResourceBundle resources) {
         try {
             OperacionArchivo operacionArchivo = new OperacionArchivo();
@@ -70,7 +75,7 @@ public class Controller implements Initializable {
     }
 
     /**
-     * Método para buscar
+     * Método para buscar textos
      */
     @FXML
     private void buscar() {
@@ -114,7 +119,7 @@ public class Controller implements Initializable {
     }
 
     /**
-     * Método para resaltar por rango
+     * Método para resaltar por rango de letras
      *
      * @param range lista de rangos
      */
@@ -150,6 +155,10 @@ public class Controller implements Initializable {
             System.out.println(ex.getMessage());
         }
     }
+    
+    /**
+     * Método  que abre la ventana de ajustes
+     */
 
     @FXML
     private void abrirAjustes() {
@@ -171,6 +180,9 @@ public class Controller implements Initializable {
         }
     }
 
+    /**
+     * Resetea todos los valores del programa
+     */
 
     @FXML
     private void reset() {
@@ -186,9 +198,9 @@ public class Controller implements Initializable {
 
 
     /**
-     * Alert de error
+     * Alerta de error
      *
-     * @param text texto del alert
+     * @param text texto de la alerta
      */
     @FXML
     private void mostrarAlertError(String text) {
@@ -202,7 +214,7 @@ public class Controller implements Initializable {
     /**
      * Alert de info
      *
-     * @param text texto del alert
+     * @param texto de la alerta
      */
     @FXML
     private void mostrarAlertInfo(String text) {
@@ -216,7 +228,7 @@ public class Controller implements Initializable {
     /**
      * Alert de advertencia
      *
-     * @param text texto del alert
+     * @param text texto de la alerta
      */
     @FXML
     private void mostrarAlertWarning(String text) {
