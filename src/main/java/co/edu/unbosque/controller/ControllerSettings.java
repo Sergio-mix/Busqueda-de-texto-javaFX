@@ -28,6 +28,11 @@ public class ControllerSettings implements Initializable {
     private JFXSlider timeRange;
 
     @Override
+    /**
+     * Este metodo inicializa los valores de la pestaña propiedades
+     * @param url Este es el texto completo de donde se buscara la palabra
+     * @param buscar Es el caracter o palabra buscada por el ususario
+     */
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
             cbAlgoritmo.getItems().add(0, "Basic");
@@ -44,40 +49,54 @@ public class ControllerSettings implements Initializable {
             System.out.println(ex.getMessage());
         }
     }
-
+    /**
+     * Con este metodo se actualiza el algoritmo de busqueda deseado por el usuario
+     */
     @FXML
     private void updateAlgoritmo() throws IOException {
         OperacionArchivo operacionArchivo = new OperacionArchivo();
         OperacionArchivo.getAjustes().put("algoritmo", cbAlgoritmo.getSelectionModel().getSelectedIndex());
         operacionArchivo.escribirProperties("algoritmo", cbAlgoritmo.getSelectionModel().getSelectedIndex());
     }
-
+    /**
+     * Con este metodo se actualiza la opcion de precision en el algoritmo
+     */
     @FXML
     private void updatePresicion() throws IOException {
         OperacionArchivo operacionArchivo = new OperacionArchivo();
         OperacionArchivo.getAjustes().put("presicion", blPresicion.isSelected());
         operacionArchivo.escribirProperties("presicion", blPresicion.isSelected());
     }
-
+    /**
+     * Con este metodo se actuliza el color que el usuario quiere para resaltar el texto
+     */
     @FXML
     private void updateColorSelect() throws IOException {
         OperacionArchivo operacionArchivo = new OperacionArchivo();
         OperacionArchivo.getAjustes().put("selectColor", toHexString(pikerColor.getValue()));
         operacionArchivo.escribirProperties("selectColor", toHexString(pikerColor.getValue()));
     }
-
+    /**
+     * Con este metodo se actualiza el lapso de tiempo elegido en ajustes
+     */
     @FXML
     private void updateTiempo() throws IOException {
         OperacionArchivo operacionArchivo = new OperacionArchivo();
         OperacionArchivo.getAjustes().put("tiempo", timeRange.getValue());
         operacionArchivo.escribirProperties("tiempo", timeRange.getValue());
     }
-
+    /**
+     * Este metodo convierte cada valor de color a un string
+     * @param val el valor que tiene el color
+     */
     private String format(double val) {
         String in = Integer.toHexString((int) Math.round(val * 255));
         return in.length() == 1 ? "0" + in : in;
     }
-
+    /**
+     * Este metodo pasa a formato Hex el color elegido por el usuario
+     * @param value es el valor que tiene el color elegido
+     */
     public String toHexString(Color value) {
         return "#" + (format(value.getRed()) + format(value.getGreen()) + format(value.getBlue()) + format(value.getOpacity()))
                 .toUpperCase();
